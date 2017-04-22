@@ -15,6 +15,7 @@ libraryDependencies += "org.apache.spark" % "spark-core_2.11" % "2.1.0"
 $sbt console
 scala> import org.apache.spark.SparkConf
 scala> import org.apache.spark.SparkContext
-scala> val sc = new SparkConf().setAppName("cust data").setMaster("local[*]")
-sc: org.apache.spark.SparkConf = org.apache.spark.SparkConf@13b23911
+scala> val config = new SparkConf().setAppName("cust data").setMaster("local[*]")
+config: org.apache.spark.SparkConf = org.apache.spark.SparkConf@13b23911
+scala>val sc = new SparkContext(sc)
 ```
