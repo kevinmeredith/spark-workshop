@@ -13,9 +13,13 @@ scalaVersion := "2.11.8"
 
 libraryDependencies += "org.apache.spark" % "spark-core_2.11" % "2.1.0"
 $sbt console
-scala> import org.apache.spark.SparkConf
-scala> import org.apache.spark.SparkContext
-scala> val config = new SparkConf().setAppName("cust data").setMaster("local[*]")
-config: org.apache.spark.SparkConf = org.apache.spark.SparkConf@13b23911
-scala>val sc = new SparkContext(config)
+
+# Run the following from the Scala Console
+
+import org.apache.spark.SparkConf
+import org.apache.spark.SparkContext
+val config = new SparkConf().setAppName("cust data").setMaster("local[*]")
+val sc = new SparkContext(config)
+val sqlContext = new org.apache.spark.sql.SQLContext(sc)
+import sqlContext.implicits._
 ```
